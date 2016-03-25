@@ -1,6 +1,8 @@
 from journal.views import my_view, compose, entry_detail, edit_entry
 from pyramid.testing import DummyRequest
 from os import environ
+import pytest
+from webtest.app import AppError
 
 AUTH_DATA = {'username': 'admin', 'password': 'secret'}
 
@@ -56,17 +58,22 @@ def test_compose_page(authenticated_app):
     assert response.status_code == 200
 
 
-# TODO:  test attempting to access compose page directly via url when not logged in.
-# def test_compose_page(app):
-#     """Test compose route returns 200."""
-#     response = app.get('/compose')
-#     assert response.status_code == 403
+def test_compose_page_no_login(app):
+    """Test not logged in /compose will cause a 403."""
+    with pytest.raises(AppError):
+        app.get('/compose')
 
 
 def test_edit_page(authenticated_app):
     """Test edit route returns 200."""
     response = authenticated_app.get('/edit/1')
     assert response.status_code == 200
+
+
+def test_edit_page_no_login(app):
+    """Test not logged in /edit will cause a 403."""
+    with pytest.raises(AppError):
+        app.get('/edit')
 
 
 def test_password_exist(auth_env):
