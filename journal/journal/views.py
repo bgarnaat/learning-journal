@@ -5,7 +5,7 @@ from pyramid.security import remember, forget
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from jinja2 import Markup
 from .security import check_password
-import markdown
+from markdown import markdown
 
 from sqlalchemy.exc import DBAPIError
 
@@ -115,5 +115,5 @@ def logout(request):
 
 
 def render_markdown(content):
-    output = Markup(markdown.markdown(content))
+    output = Markup(markdown(content))
     return output
