@@ -5,7 +5,7 @@ import os
 
 
 def check_password(pw):
-    hashed = os.environ.get('AUTH_PASSWORD', sha512_crypt.encrypt('somePassword'))
+    hashed = os.environ.get('AUTH_PASSWORD')
     return sha512_crypt.verify(pw, hashed)
 
 

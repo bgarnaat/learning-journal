@@ -28,9 +28,9 @@ def main(global_config, **settings):
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
 
-    settings['auth.username'] = os.environ.get('AUTH_USERNAME', 'admin')
-    settings['auth.password'] = os.environ.get('AUTH_PASSWORD', 'secret')
-    auth_secret = os.environ.get('JOURNAL_AUTH_SECRET', 'words')
+    settings['auth.username'] = os.environ.get('AUTH_USERNAME')
+    settings['auth.password'] = os.environ.get('AUTH_PASSWORD')
+    auth_secret = os.environ.get('AUTH_SECRET')
     authn_policy = AuthTktAuthenticationPolicy(
                                               secret=auth_secret,
                                               hashalg='sha512'

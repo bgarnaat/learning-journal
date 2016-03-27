@@ -10,7 +10,6 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 requires = [
     'pyramid',
-    'pyramid_debugtoolbar',
     'pyramid_jinja2',
     'pyramid_tm',
     'SQLAlchemy',
@@ -23,9 +22,15 @@ requires = [
     'markdown',
     ]
 
-tests_require = ['pytest', 'pytest-watch', 'tox', 'webtest']
+tests_require = ['pytest',
+                 'pytest-watch',
+                 'tox',
+                 'webtest']
 
-dev_requires = ['ipython', 'pyramid-ipython', 'coverage']
+dev_requires = ['ipython',
+                'pyramid-ipython',
+                'pyramid_debugtoolbar',
+                'coverage']
 
 setup(name='journal',
       version='0.0',
