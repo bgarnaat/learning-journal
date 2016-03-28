@@ -20,7 +20,7 @@ def make_session(settings):
 
 def main(global_config, **settings):
     """This function returns a Pyramid WSGI application."""
-    database_url = os.environ.get('JOURNAL_DB', None)
+    database_url = os.environ.get('DATABASE_URL', None)
     if database_url is not None:
         settings['sqlalchemy.url'] = database_url
 
