@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: calc(100% - 60px);
+  height: 100px;
+  background: #000;
+  position: fixed;
+  top: 0;
+  padding: 0 30px;
+}
+
+hgroup {
+  display: inline-block;
+  height: 40px;
+  margin: 10px 0 0;
+}
+
+.header_offset {
+  margin-top: 100px;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #ccc;
+}
+
+nav {
+}
+
+#nav_ul {
+  width: 100%;
+  height: 50px;
+  }
+
+#nav_ul > li {
+  background: #222;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  float: right;
+  width: 10%;
+  min-width: 75px;
+  height: 25px;
+  padding: 10px 15px 0;
+  margin: 15px 2% 0;
+  text-align: center;
+}
+
+body {
+  margin-top: 75px;
+  background: #111;
+  color: #ccc;
+}
+
+main {
+  padding: 50px;
+}
+
+section {
+  width: calc(70% - 90px);
+  padding: 30px;
+  background: #333;
+  border-radius: 15px;
+}
+
+aside {
+  float: right;
+  width: calc(30% - 30px);
+}
+
+h2 {
+  padding: 10px 0;
+  text-decoration: underline overline;
+  font-size: 3em;
+  /*color: #aaa;*/
+}
+
+.posts, .post {
+  padding: 15px 20px;
+  font-size: 1.15em;
+}
+
+p {
+  padding: 30px;
+  font-size: 1.05em;
+  text-align: justify;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.timeline-widget {
+  border-radius: 10px;
+  background: #333;
+  color: #ccc;
+  padding: 5px;
+}
+
+.timeline-widget > h1 {
+  color: #eee;
+}
+
+.edit {
+  float: right;
+}
+
+form > input, textarea{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  margin: 5px 0 15px;
+}
+
+label {
+  font-size: 1.15em;
+}
+
+form > button {
+  display: block;
+  padding: 5px 25px;
+  border-radius: 8px;
+}
